@@ -1,0 +1,23 @@
+<template>
+  <div class="card">
+    <div class="card-header">Child Component</div>
+    <div class="card-body">
+      <p>{{ appMessage }}</p>
+      <deep-child />
+    </div>
+  </div>
+</template>
+
+<script>
+import { inject } from "vue";
+import DeepChild from "./DeepChild.vue";
+export default {
+  components: { DeepChild },
+  setup() {
+    const appMessage = inject("app-message");
+    return { appMessage };
+  },
+};
+</script>
+
+<style lang="scss" scoped></style>

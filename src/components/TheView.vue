@@ -1,40 +1,13 @@
 <template>
-  <main>
-    <div class="container py-4">
-      <my-button class="btn btn-line" id="parent-button" @click="onAlert()" />
-      <label-input label="이름" data-id="id" />
-      <hr />
-      <fancy-button v-slot="{ fancyMessage }">{{ fancyMessage }}</fancy-button>
-      <hr />
-      <app-card>
-        <template v-slot:header="{ headerMesaage }">
-          {{ headerMesaage }}
-        </template>
-        <template v-slot:default="{ childMessage, helloMessage }">
-          <br />
-          {{ childMessage }}
-          <br />
-          {{ helloMessage }}
-        </template>
-        <!-- 암시적인 default 슬롯 -->
-        <template #footer="{ footerMessage }"> {{ footerMessage }} </template>
-      </app-card>
-    </div>
-  </main>
+  <provider-inject />
 </template>
 
 <script>
-import AppCard from "./AppCard.vue";
-import FancyButton from "./FancyButton.vue";
-import LabelInput from "./LabelInput.vue";
-import MyButton from "./MyButton.vue";
+import ProviderInject from "./ProviderInject.vue";
 export default {
-  components: { MyButton, LabelInput, FancyButton, AppCard },
+  components: { ProviderInject },
   setup() {
-    function onAlert() {
-      return alert("알럿창을 띄움");
-    }
-    return { onAlert };
+    return {};
   },
 };
 </script>
