@@ -9,11 +9,7 @@
     <hr />
     <ul>
       <!-- <li v-for="fruit in fruits" :key="fruit" ref="itemRefs"> -->
-      <li
-        v-for="fruit in fruits"
-        :key="fruit"
-        :ref="(el) => itemRefs.push(el.textContent)"
-      >
+      <li v-for="fruit in fruits" :key="fruit" :ref="(el) => itemRefs.push(el)">
         {{ fruit }}
       </li>
     </ul>
